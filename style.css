@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+.clouds{
+    margin-top: 1px;
+    width: 200%;
+    height: 50vh;
+    background-image: url('cloud.png');
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+    background-repeat: repeat-y;
+    animation: water 60s linear infinite;
+}
+.boat{
+    width: 500px;
+    left: 50%;
+    bottom: 180px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+.boat img{
+    width: 100%;
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+    animation: car 2s linear infinite;
+}
+@keyframes car {
+    0%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+.water{
+    height: 200px;
+    width: 1200%;
+    display: block;
+    background-image: url('water.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: water 80s linear infinite;
+}
+@keyframes water {
+    100%{
+        transform: translateX(-3400px);
+    }
+}
+.island{
+    width: 500px;
+    top: 10%;
+    left: 20%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 2;
+}
+@media screen and (max-width:768px) {
+    .island{
+        display: none;
+    }
+    .boat{
+        width: 300px;
+        left: 50%;
+        bottom: 100px;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 2;
+    }
+    .boat img{
+        width: 100%;
+        animation: car 2s linear infinite;
+    }
+}
