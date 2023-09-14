@@ -27,7 +27,7 @@
 .boat{
     width: 500px;
     left: 50%;
-    bottom: 180px;
+    bottom: 140px;
     transform: translateX(-50%);
     position: absolute;
     z-index: 2;
